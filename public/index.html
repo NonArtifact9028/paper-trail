@@ -63,6 +63,19 @@
 
       <p id="search-error" class="form-error" role="alert" hidden></p>
 
+      
+      <div class="field">
+         <label for="sort-papers">Sort papers by</label>
+         <select id="sort-papers" name="sort">
+            <option value="citations">Most cited</option>
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+            <option value="title-asc">Title A-Z</option>
+            <option value="title-desc">Title Z-A</option>
+         </select>
+      </div>
+
+      
       <div class="catalog-actions">
         <button type="button" id="open-paper-dialog" class="button button--primary">
           Add a paper
