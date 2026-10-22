@@ -18,6 +18,10 @@
   padding: 16px;
 }
 
+.paper-card:hover {
+  border-color: var(--accent);
+}
+
 .paper-card__title {
   margin: 0;
   font-family: Georgia, serif;
