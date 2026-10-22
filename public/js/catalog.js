@@ -31,6 +31,7 @@ const pager = document.getElementById("pager");
 const pageLabel = document.getElementById("page-label");
 const prevButton = document.getElementById("prev");
 const nextButton = document.getElementById("next");
+const sortSelect = document.getElementById("sort-papers");
 
 const LIMIT = 24;
 const state = { q: "", field: "", yearFrom: "", yearTo: "", page: 1, totalPages: 1 };
@@ -97,6 +98,7 @@ async function load() {
         yearTo: state.yearTo,
         page: state.page,
         limit: LIMIT,
+        sort: sortSelect.value,
       }),
       loadSavedTitles(),
     ]);
@@ -343,6 +345,13 @@ nextButton.addEventListener("click", () => {
     load();
   }
 });
+
+
+sortSelect.addEventListener("change", () => {
+  state.page = 1;
+  load();
+});
+
 
 loadFields();
 load();
