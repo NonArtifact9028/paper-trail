@@ -21,6 +21,9 @@ router.get("/", async (req, res) => {
     field: typeof req.query.field === "string" ? req.query.field.slice(0, 80) : "",
     yearFrom: Number(req.query.yearFrom) || undefined,
     yearTo: Number(req.query.yearTo) || undefined,
+    sort: typeof req.query.sort === "string"
+      ? req.query.sort
+      : "citations",
     limit,
     skip: (page - 1) * limit,
   });
